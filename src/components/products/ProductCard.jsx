@@ -16,7 +16,7 @@ export default function ProductCard({ product, onAddToCart }) {
       <div style={imgWrap}>
         <img
           src={product.images}
-          alt="image"
+          alt={product.name}
           style={{ height: "100px", width: "150px", objectFit: "cover",marginTop:"8px",border: "1px solid #ddd",borderRadius: "10px", }}
         />        
         
