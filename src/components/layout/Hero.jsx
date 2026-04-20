@@ -17,19 +17,19 @@ export default function Hero() {
       {/* RIGHT SIDE - IMAGE SLIDER */}
       <div style={sliderContainer}>
         <div style={sliderTrack}>
-          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" style={sliderImg} />
-          <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" style={sliderImg} />
-          <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d" style={sliderImg} />
-          <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796" style={sliderImg} />
-          <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab" style={sliderImg} />
-          <img src="https://tse2.mm.bing.net/th/id/OIP.wK1XBsiJzj-sSfSPXUIvNQHaE7?w=1600&h=1066&rs=1&pid=ImgDetMain&o=7&rm=3" style={sliderImg} />
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="product" style={sliderImg} />
+          <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" alt="product" style={sliderImg} />
+          <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d" alt="product" style={sliderImg} />
+          <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796" alt="product" style={sliderImg} />
+          <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab" alt="product" style={sliderImg} />
+          <img src="https://tse2.mm.bing.net/th/id/OIP.wK1XBsiJzj-sSfSPXUIvNQHaE7?w=1600&h=1066&rs=1&pid=ImgDetMain&o=7&rm=3" alt="product" style={sliderImg} />
 
-          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" style={sliderImg} />
-          <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" style={sliderImg} />
-          <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d" style={sliderImg} />
-          <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796" style={sliderImg} />
-          <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab" style={sliderImg} />
-          <img src="https://tse2.mm.bing.net/th/id/OIP.wK1XBsiJzj-sSfSPXUIvNQHaE7?w=1600&h=1066&rs=1&pid=ImgDetMain&o=7&rm=3" style={sliderImg} />
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="product" style={sliderImg} />
+          <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" alt="product" style={sliderImg} />
+          <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d" alt="product" style={sliderImg} />
+          <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796" alt="product" style={sliderImg} />
+          <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab" alt="product" style={sliderImg} />
+          <img src="https://tse2.mm.bing.net/th/id/OIP.wK1XBsiJzj-sSfSPXUIvNQHaE7?w=1600&h=1066&rs=1&pid=ImgDetMain&o=7&rm=3" alt="product" style={sliderImg} />
         </div>
       </div>
 
