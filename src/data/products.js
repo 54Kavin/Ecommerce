@@ -32,7 +32,7 @@ const PRODUCTS_DB = [
   { id: 14, name: "Cast Iron Skillet", category: "Kitchen", price: 89, originalPrice: 110, rating: 4.9, reviews: 4321, images: pan, badge: "Bestseller", description: "Pre-seasoned, lifetime warranty" },
   { id: 15, name: "Cashmere Beanie", category: "Clothing", price: 79, originalPrice: 109, rating: 4.7, reviews: 1234, images: beanie, badge: null, description: "Grade A Mongolian cashmere, ribbed knit" },
   { id: 16, name: "Portable Projector", category: "Electronics", price: 499, originalPrice: 649, rating: 4.5, reviews: 432, images: projecter, badge: "Sale", description: "1080p, 300 lumens, built-in Dolby audio" },
-  { id: 17, name: "Mobile Phone", category: "Electronics", price: 1299, originalPrice: 2299, rating: 4.8, reviews: 879, images: s24, badge: "Sale", description: "portable wireless device for communcation" },
+  // { id: 17, name: "Mobile Phone", category: "Electronics", price: 1299, originalPrice: 2299, rating: 4.8, reviews: 879, images: s24, badge: "Sale", description: "portable wireless device for communcation" },
 ];
 
 export default PRODUCTS_DB;
