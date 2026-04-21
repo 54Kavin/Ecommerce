@@ -7,7 +7,7 @@ import wallet from "../imgpic/wallet.jpg";
 import hat from "../imgpic/hat.jpg";
 import keyboard from "../imgpic/keyboard.jpg";
 import pan from "../imgpic/pan.jpg";
-import s24 from "../imgpic/s24.png";
+// import s24 from "../imgpic/s24.png";
 import shoes from "../imgpic/shoes.jpg";
 import shorts from "../imgpic/shorts.jpg";
 import sunglasses from "../imgpic/sunglasses.jpg";
