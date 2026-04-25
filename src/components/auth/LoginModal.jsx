@@ -21,7 +21,7 @@ export default function LoginModal({ onClose }) {
           <h2 style={title}>Sign In</h2>
           <button style={closeBtn} onClick={onClose}>✕</button>
         </div>
-        <div style={{ padding:24 }}>
+        <div style={{ padding: "clamp(16px, 4vw, 24px)" }}>
           <p style={sub}>Sign in to access your cart and orders</p>
           <label style={label}>Email</label>
           <input style={input} value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -37,12 +37,80 @@ export default function LoginModal({ onClose }) {
   );
 }
 
-const overlay  = { position:"fixed", inset:0, background:"rgba(0,0,0,0.7)", zIndex:200, display:"flex", justifyContent:"center", alignItems:"center", backdropFilter:"blur(4px)" };
-const modal    = { background:"#0f172a", borderRadius:16, border:"1px solid #1e293b", width:"100%", maxWidth:380 };
-const header   = { display:"flex", justifyContent:"space-between", alignItems:"center", padding:24, borderBottom:"1px solid #1e293b" };
-const title    = { color:"#f8fafc", fontSize:20, fontWeight:700, margin:0 };
+// const overlay  = { position:"fixed", inset:0, background:"rgba(0,0,0,0.7)", zIndex:200, display:"flex", justifyContent:"center", alignItems:"center", backdropFilter:"blur(4px)" };
+// const modal    = { background:"#0f172a", borderRadius:16, border:"1px solid #1e293b", width:"100%", maxWidth:380 };
+// const header   = { display:"flex", justifyContent:"space-between", alignItems:"center", padding:24, borderBottom:"1px solid #1e293b" };
+// const title    = { color:"#f8fafc", fontSize:20, fontWeight:700, margin:0 };
 const closeBtn = { background:"transparent", border:"none", color:"#64748b", fontSize:20, cursor:"pointer" };
-const sub      = { color:"#94a3b8", marginBottom:24, fontSize:14, fontFamily:"sans-serif" };
+// const sub      = { color:"#94a3b8", marginBottom:24, fontSize:14, fontFamily:"sans-serif" };
 const label    = { display:"block", color:"#94a3b8", fontSize:12, letterSpacing:1, marginBottom:6, fontFamily:"sans-serif" };
-const input    = { width:"100%", background:"#1e293b", border:"1px solid #334155", color:"#f1f5f9", padding:"12px 16px", borderRadius:8, fontSize:14, outline:"none", boxSizing:"border-box", marginBottom:16, fontFamily:"sans-serif" };
-const btn      = { background:"#f59e0b", border:"none", color:"#0a0a0f", padding:14, borderRadius:10, cursor:"pointer", fontWeight:700, fontSize:15, fontFamily:"sans-serif", width:"100%" };
+// const input    = { width:"100%", background:"#1e293b", border:"1px solid #334155", color:"#f1f5f9", padding:"12px 16px", borderRadius:8, fontSize:14, outline:"none", boxSizing:"border-box", marginBottom:16, fontFamily:"sans-serif" };
+// const btn      = { background:"#f59e0b", border:"none", color:"#0a0a0f", padding:14, borderRadius:10, cursor:"pointer", fontWeight:700, fontSize:15, fontFamily:"sans-serif", width:"100%" };
+
+const overlay = {
+  position: "fixed",
+  inset: 0,
+  background: "rgba(0,0,0,0.7)",
+  zIndex: 200,
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  backdropFilter: "blur(4px)",
+  padding: "16px" // ✅ prevent edge touching on mobile
+};
+
+const modal = {
+  background: "#0f172a",
+  borderRadius: 16,
+  border: "1px solid #1e293b",
+  width: "100%",
+  maxWidth: "380px",
+  maxHeight: "90vh",     // ✅ prevent overflow
+  overflowY: "auto"      // ✅ scroll if needed
+};
+
+const header = {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  padding: "clamp(16px, 3vw, 24px)", // ✅ responsive padding
+  borderBottom: "1px solid #1e293b"
+};
+
+const title = {
+  color: "#f8fafc",
+  fontSize: "clamp(16px, 4vw, 20px)", // ✅ responsive text
+  fontWeight: 700,
+  margin: 0
+};
+
+const sub = {
+  color: "#94a3b8",
+  marginBottom: 20,
+  fontSize: "clamp(12px, 3vw, 14px)"
+};
+
+const input = {
+  width: "100%",
+  background: "#1e293b",
+  border: "1px solid #334155",
+  color: "#f1f5f9",
+  padding: "10px 14px",       // ✅ smaller on mobile
+  borderRadius: 8,
+  fontSize: "clamp(12px, 3vw, 14px)",
+  outline: "none",
+  boxSizing: "border-box",
+  marginBottom: 14
+};
+
+const btn = {
+  background: "#f59e0b",
+  border: "none",
+  color: "#0a0a0f",
+  padding: "12px",           // ✅ reduced
+  borderRadius: 10,
+  cursor: "pointer",
+  fontWeight: 700,
+  fontSize: "clamp(13px, 3vw, 15px)",
+  width: "100%"
+};

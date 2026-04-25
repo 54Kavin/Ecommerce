@@ -35,8 +35,44 @@ export default function ShopPage({
   );
 }
 
-const main    = { maxWidth:1400, margin:"0 auto", padding:"40px 24px", display:"flex", gap:32, alignItems:"flex-start" };
-const content = { flex:1, minWidth:0 };
-const bar     = { display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:24 };
-const count   = { color:"#64748b", fontSize:14, fontFamily:"sans-serif" };
-const pInfo   = { color:"#475569", fontSize:13, fontFamily:"sans-serif" };
+// const main    = { maxWidth:1400, margin:"0 auto", padding:"40px 24px", display:"flex", gap:32, alignItems:"flex-start" };
+// const content = { flex:1, minWidth:0 };
+// const bar     = { display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:24 };
+// const count   = { color:"#64748b", fontSize:14, fontFamily:"sans-serif" };
+// const pInfo   = { color:"#475569", fontSize:13, fontFamily:"sans-serif" };
+
+const main = {
+  maxWidth: 1400,
+  margin: "0 auto",
+  padding: "clamp(20px, 5vw, 40px) 16px",
+  display: "flex",
+  flexWrap: "wrap",           // ✅ important
+  gap: "clamp(16px, 3vw, 32px)",
+  alignItems: "flex-start"
+};
+
+const content = {
+  flex: "1 1 600px",          // ✅ responsive width
+  minWidth: 0
+};
+
+const bar = {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  flexWrap: "wrap",           // ✅ mobile wrap
+  gap: "10px",
+  marginBottom: 24
+};
+
+const count = {
+  color: "#64748b",
+  fontSize: "clamp(12px, 2vw, 14px)", // ✅ responsive text
+  fontFamily: "sans-serif"
+};
+
+const pInfo = {
+  color: "#475569",
+  fontSize: "clamp(11px, 2vw, 13px)",
+  fontFamily: "sans-serif"
+};

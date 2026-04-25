@@ -44,29 +44,29 @@ export default function Hero() {
 }
 
 const sub   = { color:"#f59e0b", fontSize:12, letterSpacing:4, textTransform:"uppercase", marginBottom:16, fontFamily:"sans-serif" };
-const title = { fontSize:"clamp(40px,6vw,80px)", fontWeight:700, lineHeight:1.1, margin:"0 0 24px", color:"#f8fafc" };
-const desc  = { color:"#64748b", fontSize:18, fontFamily:"sans-serif", fontWeight:300 };
+// const title = { fontSize:"clamp(40px,6vw,80px)", fontWeight:700, lineHeight:1.1, margin:"0 0 24px", color:"#f8fafc" };
+// const desc  = { color:"#64748b", fontSize:18, fontFamily:"sans-serif", fontWeight:300 };
 
-const sliderContainer = {
-  width: "40%",
-  overflow: "hidden",
-  borderRadius:"80px"
-};
+// const sliderContainer = {
+//   width: "40%",
+//   overflow: "hidden",
+//   borderRadius:"80px"
+// };
 
-const sliderTrack = {
-  display: "flex",
-  gap: "20px",
-  width: "max-content", 
-  animation: "slideImages 35s linear infinite",
-};
+// const sliderTrack = {
+//   display: "flex",
+//   gap: "20px",
+//   width: "max-content", 
+//   animation: "slideImages 35s linear infinite",
+// };
 
-const sliderImg = {
-  height: "250px",
-  width: "200px",
-  objectFit: "cover",
-  backgroundColor: "#ffffff",
-  borderRadius: "12px",
-};
+// const sliderImg = {
+//   height: "250px",
+//   width: "200px",
+//   objectFit: "cover",
+//   backgroundColor: "#ffffff",
+//   borderRadius: "12px",
+// };
 
 const freeShipping = {
   position: "absolute",
@@ -83,16 +83,66 @@ const freeShipping = {
   backdropFilter: "blur(6px)"
 };
 
+// const hero = {
+//   background:"linear-gradient(135deg,#0a0a0f 0%,#0f172a 50%,#1e1a0f 100%)",
+//   padding:"80px 24px",
+//   maxWidth:1400,
+//   margin:"0 auto",
+//   display:"flex",
+//   alignItems:"center",
+//   justifyContent:"space-between",
+//   overflow:"hidden",
+//   position:"relative"   
+// };
+
 const hero = {
-  background:"linear-gradient(135deg,#0a0a0f 0%,#0f172a 50%,#1e1a0f 100%)",
-  padding:"80px 24px",
-  maxWidth:1400,
-  margin:"0 auto",
-  display:"flex",
-  alignItems:"center",
-  justifyContent:"space-between",
-  overflow:"hidden",
-  position:"relative"   // ✅ ADD THIS
+  background: "linear-gradient(135deg,#0a0a0f 0%,#0f172a 50%,#1e1a0f 100%)",
+  padding: "80px 24px",
+  maxWidth: 1400,
+  margin: "0 auto",
+  display: "flex",
+  flexWrap: "wrap",            // ✅ important
+  alignItems: "center",
+  justifyContent: "space-between",
+  gap: "40px",
+  overflow: "hidden",
+  position: "relative"
+};
+
+const sliderContainer = {
+  flex: "1 1 400px",           // ✅ responsive flex
+  maxWidth: "100%",
+  overflow: "hidden",
+  borderRadius: "40px"
+};
+
+const sliderTrack = {
+  display: "flex",
+  gap: "16px",
+  width: "max-content",
+  animation: "slideImages 35s linear infinite"
+};
+
+const sliderImg = {
+  height: "220px",
+  width: "160px",
+  objectFit: "cover",
+  borderRadius: "12px"
+};
+
+const title = {
+  fontSize: "clamp(32px, 6vw, 80px)", // ✅ responsive text
+  fontWeight: 700,
+  lineHeight: 1.1,
+  margin: "0 0 20px",
+  color: "#f8fafc"
+};
+
+const desc = {
+  color: "#64748b",
+  fontSize: "clamp(14px, 2vw, 18px)", // ✅ responsive text
+  fontFamily: "sans-serif",
+  fontWeight: 300
 };
 
 

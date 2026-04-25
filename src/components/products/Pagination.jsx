@@ -1,6 +1,20 @@
 export default function Pagination({ page, totalPages, onChange }) {
   if (totalPages <= 1) return null;
-  const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
+  const getPages = () => {
+  const range = [];
+  const max = 5;
+
+  let start = Math.max(1, page - 2);
+  let end = Math.min(totalPages, page + 2);
+
+  for (let i = start; i <= end; i++) {
+    range.push(i);
+  }
+
+  return range;
+};
+
+const pages = getPages();
 
   return (
     <div style={wrap}>
@@ -13,7 +27,36 @@ export default function Pagination({ page, totalPages, onChange }) {
   );
 }
 
-const wrap   = { display:"flex", justifyContent:"center", gap:8, marginTop:40, flexWrap:"wrap" };
-const btn    = { background:"#0f172a", border:"1px solid #1e293b", color:"#94a3b8", padding:"8px 14px", borderRadius:6, cursor:"pointer", fontSize:13, fontFamily:"sans-serif" };
-const active = { background:"#f59e0b", border:"1px solid #f59e0b", color:"#0a0a0f", fontWeight:700 };
-const dis    = { opacity:0.4, cursor:"not-allowed" };
+const wrap = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  gap: "6px",
+  marginTop: 40,
+  flexWrap: "wrap",           // ✅ wrap on small screens
+  padding: "0 10px"
+};
+
+const btn = {
+  background: "#0f172a",
+  border: "1px solid #1e293b",
+  color: "#94a3b8",
+  padding: "6px 10px",        // ✅ smaller for mobile
+  borderRadius: 6,
+  cursor: "pointer",
+  fontSize: "clamp(11px, 2vw, 13px)", // ✅ responsive text
+  fontFamily: "sans-serif",
+  minWidth: "36px"            // ✅ consistent size
+};
+
+const active = {
+  background: "#f59e0b",
+  border: "1px solid #f59e0b",
+  color: "#0a0a0f",
+  fontWeight: 700
+};
+
+const dis = {
+  opacity: 0.4,
+  cursor: "not-allowed"
+};

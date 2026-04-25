@@ -17,7 +17,7 @@ export default function ProductCard({ product, onAddToCart }) {
         <img
           src={product.images}
           alt={product.name}
-          style={{ height: "100px", width: "150px", objectFit: "cover",marginTop:"8px",border: "1px solid #ddd",borderRadius: "10px", }}
+          style={{ height: "100px", width: "100px",maxHeight: "120px", objectFit: "cover",borderRadius: "10px", }}
         />        
         
         <Badge text={product.badge} />
@@ -49,15 +49,80 @@ export default function ProductCard({ product, onAddToCart }) {
   );
 }
 
-const card = { background: "#0f172a", border: "1px solid #1e293b", borderRadius: 12, overflow: "hidden", transition: "all 0.3s", cursor: "pointer" };
+// const card = { background: "#0f172a", border: "1px solid #1e293b", borderRadius: 12, overflow: "hidden", transition: "all 0.3s", cursor: "pointer" };
 const cardHover = { transform: "translateY(-4px)", border: "1px solid #334155", boxShadow: "0 20px 40px rgba(0,0,0,0.5)" };
-const imgWrap = { background: "linear-gradient(135deg,#1e293b,#0f172a)", height: 160, display: "flex", alignItems: "center", justifyContent: "center", position: "relative" };
+// const imgWrap = { background: "linear-gradient(135deg,#1e293b,#0f172a)", height: 160, display: "flex", alignItems: "center", justifyContent: "center", position: "relative" };
 const discTag = { position: "absolute", top: 12, right: 12, background: "#ef4444", color: "#fff", fontSize: 11, fontWeight: 700, padding: "4px 8px", borderRadius: 4, fontFamily: "sans-serif" };
-const body = { padding: 16 };
+// const body = { padding: 16 };
 const cat = { color: "#475569", fontSize: 10, letterSpacing: 2, textTransform: "uppercase", marginBottom: 4, fontFamily: "sans-serif" };
-const name = { color: "#f1f5f9", fontSize: 15, fontWeight: 600, margin: "0 0 6px", lineHeight: 1.3 };
-const desc = { color: "#64748b", fontSize: 12, margin: "0 0 10px", lineHeight: 1.5, fontFamily: "sans-serif" };
-const footer = { display: "flex", alignItems: "center", justifyContent: "space-between" };
-const price = { color: "#f8fafc", fontSize: 20, fontWeight: 700 };
+// const name = { color: "#f1f5f9", fontSize: 15, fontWeight: 600, margin: "0 0 6px", lineHeight: 1.3 };
+// const desc = { color: "#64748b", fontSize: 12, margin: "0 0 10px", lineHeight: 1.5, fontFamily: "sans-serif" };
+
+// const price = { color: "#f8fafc", fontSize: 20, fontWeight: 700 };
 const orig = { color: "#475569", fontSize: 13, textDecoration: "line-through", marginLeft: 6, fontFamily: "sans-serif" };
-const addBtn = { background: "#f59e0b", border: "none", color: "#0a0a0f", padding: "8px 14px", borderRadius: 6, cursor: "pointer", fontWeight: 700, fontSize: 12, fontFamily: "sans-serif" };
+// const addBtn = { background: "#f59e0b", border: "none", color: "#0a0a0f", padding: "8px 14px", borderRadius: 6, cursor: "pointer", fontWeight: 700, fontSize: 12, fontFamily: "sans-serif" };
+
+const card = {
+  background: "#0f172a",
+  border: "1px solid #1e293b",
+  borderRadius: 12,
+  overflow: "hidden",
+  transition: "all 0.3s",
+  cursor: "pointer",
+  width: "100%",              // ✅ full width
+  maxWidth: "280px",          // ✅ control size in grid
+};
+
+const imgWrap = {
+  background: "linear-gradient(135deg,#1e293b,#0f172a)",
+  height: "clamp(140px, 25vw, 180px)", // ✅ responsive height
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  position: "relative",
+  padding: "10px"
+};
+
+const body = {
+  padding: "clamp(12px, 2vw, 16px)"   // ✅ responsive padding
+};
+
+const name = {
+  color: "#f1f5f9",
+  fontSize: "clamp(13px, 2vw, 15px)", // ✅ responsive text
+  fontWeight: 600,
+  margin: "0 0 6px",
+  lineHeight: 1.3
+};
+
+const desc = {
+  color: "#64748b",
+  fontSize: "clamp(11px, 2vw, 12px)",
+  margin: "0 0 10px",
+  lineHeight: 1.5,
+  fontFamily: "sans-serif"
+};
+
+const price = {
+  color: "#f8fafc",
+  fontSize: "clamp(16px, 3vw, 20px)", // ✅ responsive price
+  fontWeight: 700
+};
+
+const addBtn = {
+  background: "#f59e0b",
+  border: "none",
+  color: "#0a0a0f",
+  padding: "6px 10px",               // ✅ smaller for mobile
+  borderRadius: 6,
+  cursor: "pointer",
+  fontWeight: 700,
+  fontSize: "clamp(11px, 2vw, 12px)"
+};
+const footer = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  gap: 8,
+  flexWrap: "wrap"   // ✅ important for small screens
+};
