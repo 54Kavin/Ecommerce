@@ -30,3 +30,15 @@ button:hover { opacity: 0.9; }
     display: block !important;
   }
 }
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  button {
+    display: block !important;
+  }
+}

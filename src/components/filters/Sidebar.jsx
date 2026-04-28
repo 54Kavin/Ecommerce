@@ -1,27 +1,45 @@
-import SearchBar      from "./SearchBar";
+import { useState, useEffect } from "react";
+import SearchBar from "./SearchBar";
 import CategoryFilter from "./CategoryFilter";
-import PriceFilter    from "./PriceFilter";
+import PriceFilter from "./PriceFilter";
 
 export default function Sidebar({
   search, setSearch,
   category, setCategory,
   priceRange, setPriceRange,
-  isMobileOpen, onClose   // ✅ new props
+  isMobileOpen, onClose
 }) {
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
-      {/* Overlay (mobile only) */}
-      {isMobileOpen && <div style={overlay} onClick={onClose}></div>}
+      {/* Overlay */}
+      {isMobile && isMobileOpen && (
+        <div style={overlay} onClick={onClose}></div>
+      )}
 
       <aside
-  className="sidebar"
-  style={{
-    ...aside,
-    display: isMobileOpen ? "block" : "none"   // ✅ control visibility
-  }}
->
-        {/* Close button (mobile) */}
-        <button style={closeBtn} onClick={onClose}>✕</button>
+        style={{
+          ...aside,
+          ...(isMobile
+            ? (isMobileOpen ? mobileAside : { display: "none" })
+            : {})
+        }}
+      >
+        {/* Close button (mobile only) */}
+        {isMobile && (
+          <button style={closeBtn} onClick={onClose}>✕</button>
+        )}
 
         <div style={section}>
           <SearchBar value={search} onChange={setSearch} />
@@ -39,26 +57,12 @@ export default function Sidebar({
   );
 }
 
-// const aside   = { width:240, flexShrink:0, position:"sticky", top:80 };
-// const section = { marginBottom:32 };
-const isMobile = window.innerWidth <= 768;
 const aside = {
   width: "100%",
-  maxWidth: "260px",        // ✅ flexible instead of fixed
+  maxWidth: "260px",
   flex: "1 1 250px",
   position: "sticky",
-  top: 80,
-};
-
-const section = {
-  marginBottom: "clamp(20px, 4vw, 32px)" // ✅ responsive spacing
-};
-
-const overlay = {
-  position: "fixed",
-  inset: 0,
-  background: "rgba(0,0,0,0.6)",
-  zIndex: 200
+  top: 80
 };
 
 const mobileAside = {
@@ -75,12 +79,22 @@ const mobileAside = {
   boxShadow: "20px 0 40px rgba(0,0,0,0.5)"
 };
 
+const overlay = {
+  position: "fixed",
+  inset: 0,
+  background: "rgba(0,0,0,0.6)",
+  zIndex: 200
+};
+
 const closeBtn = {
-  display: "none",
   background: "transparent",
   border: "none",
-  color: "#94a3b8",
-  fontSize: 20,
-  marginBottom: 16,
+  color: "#fff",
+  fontSize: 22,
+  marginBottom: 20,
   cursor: "pointer"
+};
+
+const section = {
+  marginBottom: 24
 };

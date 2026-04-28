@@ -29,3 +29,9 @@ code {
     transform: translateX(-50%);
   }
 }
+
+@media (max-width: 768px) {
+  button {
+    display: block !important;
+  }
+}

@@ -75,12 +75,12 @@ const card = {
 
 const imgWrap = {
   background: "linear-gradient(135deg,#1e293b,#0f172a)",
-  height: "clamp(140px, 25vw, 180px)", // ✅ responsive height
+  height: "clamp(140px, 55vw, 180px)", // ✅ responsive height
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
   position: "relative",
-  padding: "10px"
+  padding: "10px", 
 };
 
 const body = {
