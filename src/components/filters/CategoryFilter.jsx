@@ -51,7 +51,3 @@ const active = {
   border: "1px solid #334155",
   color: "#f59e0b"
 };
-
-const btnHover = {
-  background: "#0f172a"
-};

@@ -2,7 +2,6 @@ export default function Pagination({ page, totalPages, onChange }) {
   if (totalPages <= 1) return null;
   const getPages = () => {
   const range = [];
-  const max = 5;
 
   let start = Math.max(1, page - 2);
   let end = Math.min(totalPages, page + 2);
